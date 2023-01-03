@@ -1,10 +1,12 @@
 
 .tag-box ul {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     list-style: none;
     padding: 7px;
     border: 1px solid #a6a6a6;
+    margin-bottom: 0;
 
 }
 .tag-box ul li {
@@ -31,5 +33,17 @@
     font-size: 16px;
     flex: 1;
     
+
+}
+.options-container p {
+    margin: 0;
+    border: 1px solid grey;
+    border-top: 0;
+    padding: .3rem 1rem;
+    cursor: pointer;
+    user-select: none;
+}
+.hidden {
+    display: none;
 
 }

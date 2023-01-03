@@ -1,22 +1,38 @@
 const tagsContainer = document.querySelector('.tag-box ul'),
-input = document.querySelector('.tag-box input')
+selectElement = document.querySelector('.tag-box .options-container'),
+optionElement = document.querySelector('.tag-box .options-container p');
+const options = ['fffffffff', 'fddddddd', 'ggggggggg', 'uuuuuuuuuuu',];
+
 let tags = [];
-input.addEventListener('keyup', (e) => {
-    const value = e.target.value;
-    if (e.key == 'Enter') {
-        console.log(value);
-        if (value.length > 1 && !tags.includes(value)) {
-            value.split(',').forEach((val) => {
-                tags.push(val);
-                const newTag = document.createElement('li');
-                newTag.innerHTML = `<p>${val}</p> <i class="uil uil-multiply" onClick="remove(this, '${val}')"></i> `;
-                tagsContainer.appendChild(newTag);
-                console.log(tagsContainer);
-                e.target.value = '';
-            });
-        }
+tagsContainer.addEventListener('click', (e) => {
+    if (selectElement.classList.contains('hidden')) {
+        selectElement.classList.remove('hidden');
+    } else {
+        selectElement.classList.add('hidden');
     }
 });
+
+// adding options
+options.forEach((option) => {
+    const optionElement = document.createElement('p');
+    optionElement.onclick = (e) => {
+        addTagElement(e);
+    }
+    optionElement.innerHTML = option;
+    selectElement.appendChild(optionElement);
+});
+
+
+const addTagElement = (e)  => {
+    const value = e.target.innerHTML;
+    if (!tags.includes(value)) {
+        tags.push(value);
+        console.log(tags);
+        const newTag = document.createElement('li');
+        newTag.innerHTML = `<p>${value}</p> <i class="uil uil-multiply" onClick="remove(this, '${value}')"></i> `;
+        tagsContainer.appendChild(newTag);
+    }
+}
 const remove = (element, val) => {
     tags = tags.filter((tag) => {
         return tag !== val;
