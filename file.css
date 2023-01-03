@@ -1,0 +1,35 @@
+
+.tag-box ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 7px;
+    border: 1px solid #a6a6a6;
+
+}
+.tag-box ul li {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 4px 3px;
+    padding: .3rem .8rem;
+    background-color: rgb(98, 98, 202);
+    color: white;
+    height: 1.3rem;
+    border-radius: 5px;
+    border: 1px solid #e3d1e1;
+}
+.tag-box ul li i {
+    cursor: pointer;
+    font-size: 15px;
+    margin-left: 2px;
+}
+.tag-box .input-tags {
+    padding: .5rem 1rem;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    flex: 1;
+    
+
+}
