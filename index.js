@@ -25,12 +25,14 @@ options.forEach((option) => {
 
 const addTagElement = (e)  => {
     const value = e.target.innerHTML;
+    selectElement.classList.add('hidden');
     if (!tags.includes(value)) {
         tags.push(value);
         console.log(tags);
         const newTag = document.createElement('li');
         newTag.innerHTML = `<p>${value}</p> <i class="uil uil-multiply" onClick="remove(this, '${value}')"></i> `;
         tagsContainer.appendChild(newTag);
+
     }
 }
 const remove = (element, val) => {
@@ -40,5 +42,6 @@ const remove = (element, val) => {
     });
     element.parentElement.remove();
     console.log(tags);
+    selectElement.classList.remove('hidden');
 
 }

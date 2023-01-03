@@ -1,11 +1,15 @@
 
+.tag-box {
+    width: 50%;
+}
 .tag-box ul {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     list-style: none;
-    padding: 7px;
+    padding: 4px;
     border: 1px solid #a6a6a6;
+    border-radius: .2rem;
     margin-bottom: 0;
 
 }
@@ -19,7 +23,9 @@
     color: white;
     height: 1.3rem;
     border-radius: 5px;
-    border: 1px solid #e3d1e1;
+    border: 1px solid grey;
+    width: fit-content;
+    
 }
 .tag-box ul li i {
     cursor: pointer;
@@ -37,7 +43,7 @@
 }
 .options-container p {
     margin: 0;
-    border: 1px solid grey;
+    border: .1px solid grey;
     border-top: 0;
     padding: .3rem 1rem;
     cursor: pointer;
